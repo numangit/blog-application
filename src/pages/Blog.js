@@ -7,7 +7,7 @@ const Blog = () => {
     return (
         <div>
             <GoHome />
-            <section class="post-page-container">
+            <section className="post-page-container">
 
                 <BlogDetails />
 

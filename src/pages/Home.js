@@ -4,7 +4,7 @@ import Sidebar from '../components/home/Sidebar';
 
 const Home = () => {
     return (
-        <section class="wrapper">
+        <section className="wrapper">
 
             <Sidebar />
 

@@ -3,7 +3,7 @@ import BlogCard from './BlogCard';
 
 const BlogsContainer = () => {
     return (
-        <main class="post-container" id="lws-postContainer">
+        <main className="post-container" id="lws-postContainer">
             <BlogCard />
         </main>
     );
