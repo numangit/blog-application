@@ -1,3 +1,5 @@
+import { getBlogs } from "./blogsAPI";
+
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const initialState = {
@@ -7,9 +9,9 @@ const initialState = {
 };
 
 //Thunk function to fetch blogs
-const fetchBlogs = createAsyncThunk("blogs/fetchBlogs",
+export const fetchBlogs = createAsyncThunk("blogs/fetchBlogs",
     async () => {
-        const blogs = await {};
+        const blogs = await getBlogs();
         return blogs;
     }
 );
