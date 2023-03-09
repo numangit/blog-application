@@ -10,7 +10,7 @@ const Filter = () => {
     //function to handle sort
     const sortHandler = (e) => {
         setSelect(e.target.value);
-        dispatch(sidebarFilter(select));
+        dispatch(sidebarFilter(e.target.value));
     };
 
     return (
@@ -24,8 +24,8 @@ const Filter = () => {
                         name="filter"
                         id="lws-all"
                         className="radio"
-                        onChange={(e) => sortHandler(e)}
-                        checked />
+                        onChange={sortHandler}
+                        defaultChecked={select === "all"} />
                     <label htmlFor="lws-all">All</label>
                 </div>
                 <div >
@@ -35,7 +35,8 @@ const Filter = () => {
                         name="filter"
                         id="lws-saved"
                         onChange={sortHandler}
-                        className="radio" />
+                        className="radio"
+                        checked={select === "saved"} />
                     <label htmlFor="lws-saved">Saved</label>
                 </div>
             </div>
