@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogDetails from '../components/Blog/BlogDetails';
 import GoHome from '../components/Blog/GoHome';
+import RelatedVideosContainer from '../components/Blog/RelatedVideosContainer';
 
 const Blog = () => {
     return (
@@ -10,43 +11,8 @@ const Blog = () => {
 
                 <BlogDetails />
 
-                <aside>
-                    <h4 class="mb-4 text-xl font-medium" id="lws-relatedPosts">Related Posts</h4>
-                    <div class="space-y-4 related-post-container">
-                        {/* <!-- related post  --> */}
-                        <div class="card">
-                            <a href="post.html">
-                                <img src="./images/git.webp" class="card-image" alt="" />
-                            </a>
-                            <div class="p-4">
-                                <a href="post.html" class="text-lg post-title lws-RelatedPostTitle">
-                                    Top Github Alternatives
-                                </a>
-                                <div class="mb-0 tags">
-                                    <span>#python,</span> <span>#tech,</span> <span>#git</span>
-                                </div>
-                                <p>2010-03-27</p>
-                            </div>
-                        </div>
-                        {/* <!-- related post ends --> */}
-                        {/* <!-- related post  --> */}
-                        <div class="card">
-                            <a href="post.html">
-                                <img src="./images/ai.jpg" class="card-image" alt="" />
-                            </a>
-                            <div class="p-4">
-                                <a href="post.html" class="text-lg post-title lws-RelatedPostTitle">
-                                    The future of Artificial Inteligence
-                                </a>
-                                <div class="mb-0 tags">
-                                    <span>#python,</span> <span>#tech,</span> <span>#git</span>
-                                </div>
-                                <p>2020-07-15</p>
-                            </div>
-                        </div>
-                        {/* <!-- related post ends --> */}
-                    </div>
-                </aside>
+
+                <RelatedVideosContainer />
 
             </section>
         </div>
