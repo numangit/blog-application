@@ -6,12 +6,12 @@ const Sort = () => {
     const sortValue = useSelector(state => state.sidebar.sort);
     const [select, setSelect] = useState(sortValue);
     const dispatch = useDispatch();
-    console.log("out", select);
+    // console.log("out", select);
 
     //function to handle sort
     const sortHandler = (e) => {
         setSelect(e.target.value);
-        console.log("inside", select);
+        // console.log("inside", select);
         dispatch(sidebarSort(select));
     };
 
