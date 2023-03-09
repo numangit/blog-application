@@ -21,4 +21,4 @@ const blogsSlice = createSlice({
     initialState,
 });
 
-export default blogsSlice;
+export default blogsSlice.reducer;
