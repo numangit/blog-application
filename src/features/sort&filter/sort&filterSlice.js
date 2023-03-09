@@ -2,7 +2,7 @@ const { createSlice } = require("@reduxjs/toolkit");
 
 const initialState = {
     sort: "",
-    filter: "all"
+    filter: ""
 };
 
 const sidebarSlice = createSlice({

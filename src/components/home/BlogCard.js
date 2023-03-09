@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
-    const { id, tags, likes, createdAt, title, image, isSaved } = blog;
+    const { id, tags, likes, createdAt, title, image, isSaved } = blog || {};
 
     return (
         <div className="lws-card">

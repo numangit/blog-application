@@ -1,6 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { likeBlog, saveBlog } from '../../features/blogDetails/blogDetailsSlice';
 
 const BlogDetails = ({ blogDetails }) => {
+    // const { id, likes } = blogDetails;
+    const dispatch = useDispatch();
+
+    const handleLike = (id, likes) => {
+        dispatch(likeBlog({ id, likes }))
+    };
+
+    const handleSaved = (id, isSaved) => {
+        console.log(id, isSaved);
+        dispatch(saveBlog({ id, isSaved }))
+    };
 
     return (
         <main className="post">
@@ -15,12 +28,15 @@ const BlogDetails = ({ blogDetails }) => {
                     }
                 </div>
                 <div className="btn-group">
-                    {/* <!-- handle like on button click --> */}
-                    <button className="like-btn" id="lws-singleLinks">
+
+                    <button onClick={() => handleLike(blogDetails.id, blogDetails.likes)} className="like-btn" id="lws-singleLinks">
                         <i className="fa-regular fa-thumbs-up"></i>  {blogDetails.likes}
                     </button>
 
-                    <button className={`${blogDetails.isSaved && "active"} save-btn`} id="lws-singleSavedBtn">
+                    <button
+                        onClick={() => handleSaved(blogDetails.id, blogDetails.isSaved)}
+                        className={`${blogDetails.isSaved && "active"} save-btn`}
+                        id="lws-singleSavedBtn">
                         <i className="fa-regular fa-bookmark"></i>
                         {blogDetails.isSaved ? "Saved" : "Save"}
                     </button>

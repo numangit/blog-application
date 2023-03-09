@@ -1,4 +1,4 @@
-import { getBlogDetails } from "./blogDetailsAPI";
+import { getBlogDetails, incrementLike, updateSaved } from "./blogDetailsAPI";
 
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
@@ -13,6 +13,23 @@ const initialState = {
 export const fetchBlogDetails = createAsyncThunk("blogDetails/fetchBlogDetails",
     async (id) => {
         const blogDetails = await getBlogDetails(id);
+        return blogDetails;
+    }
+);
+
+//thunk function to like blogs
+export const likeBlog = createAsyncThunk("blogDetails/likeBlog",
+    async ({ id, likes }) => {
+        const blogDetails = await incrementLike({ id, likes });
+        return blogDetails;
+    }
+);
+
+//thunk function to save blogs
+export const saveBlog = createAsyncThunk("blogDetails/saveBlog",
+    async ({ id, isSaved }) => {
+        console.log(id, isSaved);
+        const blogDetails = await updateSaved({ id, isSaved });
         return blogDetails;
     }
 );

@@ -17,7 +17,6 @@ const Filter = () => {
         <div className="sidebar-content">
             <h4>Filter</h4>
             <div className="radio-group">
-                {/* <!-- handle filter on button click --> */}
                 <div >
                     <input
                         type="radio"

@@ -12,7 +12,7 @@ const Sort = () => {
     const sortHandler = (e) => {
         setSelect(e.target.value);
         // console.log("inside", select);
-        dispatch(sidebarSort(select));
+        dispatch(sidebarSort(e.target.value));
     };
 
     return (
