@@ -27,7 +27,7 @@ const blogDetailsSlice = createSlice({
             })
             .addCase(fetchBlogDetails.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.blogs = action.payload;
+                state.blogDetails = action.payload;
             })
             .addCase(fetchBlogDetails.rejected, (state, action) => {
                 state.isLoading = false;
