@@ -6,7 +6,7 @@ import RelatedBlogCard from './RelatedBlogCard';
 const RelatedBlogContainer = ({ blogDetails }) => {
     const { tags, id } = blogDetails;
     const dispatch = useDispatch();
-    const { relatedBlogs, isLoading, isError, error } = useSelector(state => state.relatedBlogs);
+    const { relatedBlogs } = useSelector(state => state.relatedBlogs);
     console.log(relatedBlogs);
 
     useEffect(() => {
