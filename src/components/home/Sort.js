@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { sidebarSort } from '../../features/sort&filter/sort&filterSlice';
 
 const Sort = () => {
-    const sortValue = useSelector(state => state.sidebarSort.sort)
+    const sortValue = useSelector(state => state.sidebar.sort);
     const [select, setSelect] = useState(sortValue);
     const dispatch = useDispatch();
+    console.log("out", select);
 
+    //function to handle sort
     const sortHandler = (e) => {
         setSelect(e.target.value);
+        console.log("inside", select);
         dispatch(sidebarSort(select));
     };
 
