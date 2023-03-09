@@ -24,9 +24,11 @@ const relatedBlogsSlice = createSlice({
         builder
             .addCase(fetchRelatedBlogs.pending, (state, action) => {
                 state.isLoading = true;
+                state.isError = false;
             })
             .addCase(fetchRelatedBlogs.fulfilled, (state, action) => {
                 state.isLoading = false;
+                state.isError = false;
                 state.relatedBlogs = action.payload;
             })
             .addCase(fetchRelatedBlogs.rejected, (state, action) => {

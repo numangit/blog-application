@@ -27,6 +27,7 @@ const BlogDetails = ({ blogDetails }) => {
                         blogDetails?.tags && (<span>{`#${blogDetails.tags.join(', #')}`}</span>)
                     }
                 </div>
+
                 <div className="btn-group">
 
                     <button onClick={() => handleLike(blogDetails.id, blogDetails.likes)} className="like-btn" id="lws-singleLinks">
@@ -41,6 +42,7 @@ const BlogDetails = ({ blogDetails }) => {
                         {blogDetails.isSaved ? "Saved" : "Save"}
                     </button>
                 </div>
+
                 <div className="mt-6">
                     <p>
                         {blogDetails.description}
