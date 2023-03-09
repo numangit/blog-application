@@ -1,15 +1,15 @@
 import React from 'react';
-import RelatedVideoCard from './RelatedVideoCard';
+import RelatedBlogCard from './RelatedBlogCard';
 
-const RelatedVideosContainer = () => {
+const RelatedBlogContainer = () => {
     return (
         <aside>
             <h4 className="mb-4 text-xl font-medium" id="lws-relatedPosts">Related Posts</h4>
             <div className="space-y-4 related-post-container">
-                <RelatedVideoCard />
+                <RelatedBlogCard />
             </div>
         </aside>
     );
 };
 
-export default RelatedVideosContainer;
+export default RelatedBlogContainer;

@@ -1,9 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-const BlogDetails = () => {
-    const blogDetails = useSelector(state => state.blogDetails.blogDetails);
-    console.log(blogDetails);
+const BlogDetails = ({ blogDetails }) => {
 
     return (
         <main className="post">
@@ -13,7 +10,9 @@ const BlogDetails = () => {
                     {blogDetails.title}
                 </h1>
                 <div className="tags" id="lws-singleTags">
-                    <span>#python,</span> <span>#tech,</span> <span>#git</span>
+                    {
+                        blogDetails?.tags && blogDetails.tags.map((tag, i) => <span key={i} >#{tag} </span>)
+                    }
                 </div>
                 <div className="btn-group">
                     {/* <!-- handle like on button click --> */}
@@ -25,8 +24,6 @@ const BlogDetails = () => {
                         <i className="fa-regular fa-bookmark"></i>
                         {blogDetails.isSaved ? "Saved" : "Save"}
                     </button>
-
-
                 </div>
                 <div className="mt-6">
                     <p>

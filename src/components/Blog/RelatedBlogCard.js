@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RelatedVideoCard = () => {
+const RelatedBlogCard = () => {
     return (
         <div className="card">
             <a href="post.html">
@@ -19,4 +19,4 @@ const RelatedVideoCard = () => {
     );
 };
 
-export default RelatedVideoCard;
+export default RelatedBlogCard;
