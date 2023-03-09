@@ -5,6 +5,7 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 const initialState = {
     isLoading: false,
     relatedBlogs: [],
+    isError: false,
     error: ''
 };
 
@@ -30,6 +31,7 @@ const relatedBlogsSlice = createSlice({
             })
             .addCase(fetchRelatedBlogs.rejected, (state, action) => {
                 state.isLoading = false;
+                state.isError = true;
                 state.error = action.error.message;
             })
 });
