@@ -1,13 +1,11 @@
 import React from 'react';
+import GoHome from '../components/Blog/GoHome';
 
 const Blog = () => {
     return (
         <div>
-            {/* <!-- Go Home / Go Back --> */}
-            <div class="container mt-8">
-                <a href="index.html" class="inline-block text-gray-600 home-btn" id="lws-goHome"><i
-                    class="mr-2 fa-solid fa-house"></i>Go Home</a>
-            </div>
+
+            <GoHome />
             <section class="post-page-container">
                 {/* <!-- detailed post  --> */}
                 <main class="post">
