@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux';
 import BlogCard from './BlogCard';
 
 const BlogsContainer = () => {
-    const blogs = useSelector(state => state.blogs);
-    console.log(blogs);
+    const blogs = useSelector(state => state.blogs.blogs);
 
     return (
         <main className="post-container" id="lws-postContainer">
-            <BlogCard />
+            {
+                blogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+            }
         </main>
     );
 };
