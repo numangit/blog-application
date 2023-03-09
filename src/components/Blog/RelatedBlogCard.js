@@ -13,7 +13,7 @@ const RelatedBlogCard = ({ blog }) => {
                 </Link>
                 <div className="mb-0 tags">
                     {
-                        blog?.tags && blog.tags.map((tag, i) => <span key={i} >#{tag} </span>)
+                        blog?.tags && (<span>{`#${blog.tags.join(', #')}`}</span>)
                     }
                 </div>
                 <p>{blog.createdAt}</p>

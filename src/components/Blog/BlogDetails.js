@@ -24,7 +24,7 @@ const BlogDetails = ({ blogDetails }) => {
                 </h1>
                 <div className="tags" id="lws-singleTags">
                     {
-                        blogDetails?.tags && blogDetails.tags.map((tag, i) => <span key={i} >#{tag} </span>)
+                        blogDetails?.tags && (<span>{`#${blogDetails.tags.join(', #')}`}</span>)
                     }
                 </div>
                 <div className="btn-group">
