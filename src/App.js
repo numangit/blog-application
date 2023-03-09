@@ -1,10 +1,11 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import Navigation from './components/home/blog/common/Navigation';
 
 function App() {
   return (
     <div >
+      <Navigation />
     </div>
   );
 }
