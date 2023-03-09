@@ -18,7 +18,7 @@ const BlogsContainer = () => {
     const sortBlogs = (a, b) => {
         const { sort } = filterData;
         if (sort === "newest") {
-            return parseInt(new Date(b.createdAt)) - parseInt(new Date(a.createdAt))
+            return Number(new Date(b.createdAt)) - Number(new Date(a.createdAt))
         } else if (sort === "most_liked") {
             return b.likes - a.likes
         }
