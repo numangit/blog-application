@@ -3,7 +3,7 @@ import BlogDetails from '../components/Blog/BlogDetails';
 import GoHome from '../components/Blog/GoHome';
 import RelatedVideosContainer from '../components/Blog/RelatedVideosContainer';
 
-const Blog = () => {
+const Blog = ({ route }) => {
     return (
         <div>
             <GoHome />

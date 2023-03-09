@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
-    const { tags, likes, createdAt, title, image, isSaved } = blog;
+    const { id, tags, likes, createdAt, title, image, isSaved } = blog;
     return (
         <div className="lws-card">
-            <a href="post.html">
+            <Link to={`/blogs/${id}`}>
                 <img src={image} className="lws-card-image" alt="" />
-            </a>
+            </Link>
             <div className="p-4">
                 <div className="lws-card-header">
                     <p className="lws-publishedDate">{createdAt}</p>
                     <p className="lws-likeCount"><i className="fa-regular fa-thumbs-up"></i>{likes}</p>
                 </div>
-                <a href="post.html" className="lws-postTitle">{title}</a>
+                <Link to={`/blogs/${id}`} className="lws-postTitle">{title}</Link>
                 <div className="lws-tags">
                     {
                         tags.map((tag, i) => <span key={i} >#{tag}</span>)
@@ -26,7 +27,7 @@ const BlogCard = ({ blog }) => {
                     </div>
                 }
             </div>
-        </div>
+        </div >
     );
 };
 
