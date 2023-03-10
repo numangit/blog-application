@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../../assets/LWSBlog.svg';
 
 const Navigation = () => {
     return (
@@ -7,7 +8,7 @@ const Navigation = () => {
                 {/* <!-- logo --> */}
                 <div className="logo">
                     <a href="index.html">
-                        <img src="./images/LWSBlog.svg" alt="search" />
+                        <img src={logo} alt="search" />
                     </a>
                 </div>
                 {/* <!-- auth buttons , This will nonfunctional, just for nice looking --> */}

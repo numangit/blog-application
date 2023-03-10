@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { likeBlog, likeCount, saveBlog, saveToggle } from '../../features/blogDetails/blogDetailsSlice';
 
 const BlogDetails = ({ blogDetails }) => {
-    // const { id, likes } = blogDetails;
     const dispatch = useDispatch();
 
     const handleLike = (id, likes) => {

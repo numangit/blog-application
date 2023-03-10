@@ -29,7 +29,6 @@ export const likeBlog = createAsyncThunk("blogDetails/likeBlog",
 //thunk function to save blogs
 export const saveBlog = createAsyncThunk("blogDetails/saveBlog",
     async ({ id, isSaved }) => {
-        console.log(id, isSaved);
         const blogDetails = await updateSaved({ id, isSaved });
         return blogDetails;
     }

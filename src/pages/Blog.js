@@ -10,7 +10,6 @@ const Blog = () => {
     const { blogId } = useParams();
     const dispatch = useDispatch();
     const { blogDetails } = useSelector(state => state.blogDetails);
-    // console.log(blogDetails);
 
     useEffect(() => {
         dispatch(fetchBlogDetails(blogId));

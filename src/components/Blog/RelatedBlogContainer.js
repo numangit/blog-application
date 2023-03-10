@@ -7,7 +7,6 @@ const RelatedBlogContainer = ({ blogDetails }) => {
     const { tags, id } = blogDetails;
     const dispatch = useDispatch();
     const { relatedBlogs } = useSelector(state => state.relatedBlogs);
-    // console.log(relatedBlogs);
 
     useEffect(() => {
         dispatch(fetchRelatedBlogs({ tags, id }))

@@ -7,7 +7,6 @@ export const getBlogDetails = async (id) => {
 
 //API call to update liked blog details
 export const incrementLike = async ({ id, likes }) => {
-    console.log(id, likes);
     const response = await fetch(`http://localhost:9000/blogs/${id}`, {
         method: 'PATCH',
         headers: { "content-type": "application/json; charset=UTF-8" },
@@ -21,7 +20,6 @@ export const incrementLike = async ({ id, likes }) => {
 
 //API call to update saved blog details
 export const updateSaved = async ({ id, isSaved }) => {
-    console.log(id, isSaved);
     const response = await fetch(`http://localhost:9000/blogs/${id}`, {
         method: 'PATCH',
         headers: { "content-type": "application/json; charset=UTF-8" },
