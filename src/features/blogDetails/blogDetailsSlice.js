@@ -38,6 +38,14 @@ export const saveBlog = createAsyncThunk("blogDetails/saveBlog",
 const blogDetailsSlice = createSlice({
     name: "blogDetails",
     initialState,
+    reducers: {
+        likeCount: (state, action) => {
+            if (state.blogDetails.id === action.payload) { state.blogDetails.likes += 1 };
+        },
+        saveToggle: (state, action) => {
+            if (state.blogDetails.id === action.payload) { state.blogDetails.isSaved = !state.blogDetails.isSaved };
+        },
+    },
     extraReducers: (builder) =>
         builder
             .addCase(fetchBlogDetails.pending, (state, action) => {
@@ -57,3 +65,4 @@ const blogDetailsSlice = createSlice({
 });
 
 export default blogDetailsSlice.reducer;
+export const { likeCount, saveToggle } = blogDetailsSlice.actions;

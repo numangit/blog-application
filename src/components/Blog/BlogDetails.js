@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { likeBlog, saveBlog } from '../../features/blogDetails/blogDetailsSlice';
+import { likeBlog, likeCount, saveBlog, saveToggle } from '../../features/blogDetails/blogDetailsSlice';
 
 const BlogDetails = ({ blogDetails }) => {
     // const { id, likes } = blogDetails;
@@ -8,11 +8,12 @@ const BlogDetails = ({ blogDetails }) => {
 
     const handleLike = (id, likes) => {
         dispatch(likeBlog({ id, likes }))
+            .then(data => dispatch(likeCount(data.payload.id)))
     };
 
     const handleSaved = (id, isSaved) => {
-        console.log(id, isSaved);
         dispatch(saveBlog({ id, isSaved }))
+            .then(data => dispatch(saveToggle(data.payload.id)))
     };
 
     return (
