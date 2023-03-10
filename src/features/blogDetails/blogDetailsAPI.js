@@ -9,10 +9,10 @@ export const getBlogDetails = async (id) => {
 export const incrementLike = async ({ id, likes }) => {
     console.log(id, likes);
     const response = await fetch(`http://localhost:9000/blogs/${id}`, {
-        method: 'PUT',
-        headers: { "Content-Type": "application/json; charset:UTF-8" },
+        method: 'PATCH',
+        headers: { "content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
-            likes: likes++
+            likes: likes + 1
         })
     });
     const data = await response.json();
@@ -24,7 +24,7 @@ export const updateSaved = async ({ id, isSaved }) => {
     console.log(id, isSaved);
     const response = await fetch(`http://localhost:9000/blogs/${id}`, {
         method: 'PATCH',
-        headers: { "Content-Type": "application/json; charset:UTF-8" },
+        headers: { "content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
             isSaved: !isSaved
         })
