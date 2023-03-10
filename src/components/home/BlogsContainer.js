@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import BlogCard from './BlogCard';
 
 const BlogsContainer = () => {
-    const blogs = useSelector(state => state.blogs.blogs);
+    const { blogs, isLoading, isError, error } = useSelector(state => state.blogs);
     const filterData = useSelector(state => state.sidebar);
 
     const filterBlogs = (blog) => {
@@ -27,11 +27,18 @@ const BlogsContainer = () => {
         }
     };
 
+    let content;
+
+    if (isLoading) content = <h1>Loading...</h1>;
+    if (!isLoading && isError) content = <h1>{error}</h1>;
+    if (!isLoading && !isError && !blogs.length)
+        content = <h1>No Results</h1>;
+    if (!isLoading && !isError && blogs.length)
+        content = blogs.filter(filterBlogs).sort(sortBlogs).map((blog) => <BlogCard key={blog.id} blog={blog} />);
+
     return (
         <main className="post-container" id="lws-postContainer">
-            {
-                blogs.filter(filterBlogs).sort(sortBlogs).map((blog) => <BlogCard key={blog.id} blog={blog} />)
-            }
+            {content}
         </main>
     );
 };
